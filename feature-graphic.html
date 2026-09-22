@@ -1,0 +1,121 @@
+<title>Feature Graphic</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --bg: #0D3B3E;
+    --bg-2: #0A2F31;
+    --accent: #34C08A;
+    --accent-dim: #1E8C63;
+    --text: #F4F6F4;
+    --text-dim: #9FC4B9;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--bg);
+  }
+  body {
+    padding: 0 !important;
+  }
+  .banner {
+    width: 1024px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(760px 420px at 88% 8%, rgba(52,192,138,0.22), transparent 60%),
+      linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+    font-family: 'Archivo', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  /* faint diagonal price-line motif, right side */
+  .motif {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    width: 620px;
+    height: 500px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 0 0 0 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    max-width: 640px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .bolt { width: 40px; height: 67px; flex-shrink: 0; }
+  .wordmark {
+    font-weight: 800;
+    font-size: 46px;
+    line-height: 0.92;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+  }
+  .wordmark span:first-child { color: var(--text); display: block; }
+  .wordmark span:last-child { color: var(--accent); display: block; }
+
+  .tagline {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 1.3;
+    color: var(--text);
+    text-wrap: balance;
+    max-width: 520px;
+  }
+  .tagline b { color: var(--accent); font-weight: 700; }
+
+  .pills {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .pill {
+    border: 1.5px solid rgba(159,196,185,0.35);
+    color: var(--text-dim);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 999px;
+    letter-spacing: 0.2px;
+  }
+  .pill.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #0D1413;
+  }
+</style>
+
+<div class="banner">
+  <svg class="motif" viewBox="0 0 620 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polyline points="330,430 400,380 450,400 520,300 600,240" fill="none" stroke="#34C08A" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="600" cy="240" r="7" fill="#34C08A" fill-opacity="0.9"/>
+    <polyline points="360,470 420,455 470,462 540,410 610,380" fill="none" stroke="#34C08A" stroke-opacity="0.16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+
+  <div class="content">
+    <div class="brand">
+      <svg class="bolt" viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 2 L50 46 H33 L40 76 L52 76 L46 98 L24 76 L36 76 L8 34 H27 Z" fill="#34C08A"/>
+      </svg>
+      <div class="wordmark"><span>Halba</span><span>Halba</span></div>
+    </div>
+    <div class="tagline">Vertaile sähkösopimuksia ja löydä <b>halvin</b> juuri sinun kulutuksellasi.</div>
+    <div class="pills">
+      <div class="pill on">Kiinteä</div>
+      <div class="pill">Pörssi</div>
+      <div class="pill">Kulutusvaikutus</div>
+    </div>
+  </div>
+</div>

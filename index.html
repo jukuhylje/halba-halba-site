@@ -1,0 +1,332 @@
+<title>HALBA HALBA</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --bg: #F4F6F4;
+    --card: #FFFFFF;
+    --border: #CBD3CA;
+    --accent: #16855C;
+    --accent-2: #34C08A;
+    --on-accent: #FFFFFF;
+    --text: #16211F;
+    --text-secondary: #6E7A77;
+    --hero-bg: #0D3B3E;
+    --hero-text: #F4F6F4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0D1413;
+      --card: #161F1E;
+      --border: #37453F;
+      --accent: #34C08A;
+      --accent-2: #16855C;
+      --on-accent: #0D1413;
+      --text: #E9EFEC;
+      --text-secondary: #93A09C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D1413;
+    --card: #161F1E;
+    --border: #37453F;
+    --accent: #34C08A;
+    --accent-2: #16855C;
+    --on-accent: #0D1413;
+    --text: #E9EFEC;
+    --text-secondary: #93A09C;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    line-height: 1.55;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-inline: 24px;
+  }
+
+  header.site {
+    padding-block: 22px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    text-decoration: none;
+    width: fit-content;
+  }
+  .brand svg { width: 15px; height: 25px; flex-shrink: 0; }
+  .brand .wordmark { font-weight: 700; font-size: 15px; letter-spacing: -0.2px; }
+  .brand .wordmark span:first-child { color: var(--text); }
+  .brand .wordmark span:last-child { color: var(--accent); }
+
+  .footer-links { display: flex; gap: 8px; align-items: center; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    background:
+      radial-gradient(900px 480px at 82% -10%, rgba(52,192,138,0.28), transparent 60%),
+      linear-gradient(165deg, var(--hero-bg) 0%, #0A2F31 100%);
+    color: var(--hero-text);
+    border-radius: 28px;
+    padding: 56px 28px 0;
+    margin-top: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-inner {
+    max-width: 640px;
+  }
+  .hero .bolt-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: rgba(52,192,138,0.16);
+    margin-bottom: 22px;
+  }
+  .hero .bolt-badge svg { width: 21px; height: 35px; }
+  .hero h1 {
+    font-size: clamp(34px, 5.6vw, 54px);
+    font-weight: 800;
+    line-height: 1.03;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  .hero h1 .accent { color: var(--accent-2); }
+  .hero p.lede {
+    font-size: 18px;
+    color: #C7DED6;
+    max-width: 460px;
+    margin: 0 0 30px;
+    text-wrap: balance;
+  }
+  .store-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 44px;
+  }
+  .store-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1.5px solid rgba(199,222,214,0.3);
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    color: #E4F1EC;
+  }
+  .store-pill b { font-weight: 700; }
+  .store-pill .soon {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-2);
+    font-weight: 700;
+  }
+
+  .phone-strip {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    padding-left: 8px;
+    overflow: hidden;
+  }
+  .phone-strip img {
+    width: 190px;
+    max-width: 46vw;
+    border-radius: 22px 22px 0 0;
+    border: 6px solid #0A2F31;
+    border-bottom: none;
+    box-shadow: 0 -18px 48px rgba(0,0,0,0.35);
+    display: block;
+  }
+  .phone-strip img:nth-child(2) { transform: translateY(-22px); }
+  .phone-strip img:nth-child(3) { display: none; }
+  @media (min-width: 620px) {
+    .phone-strip img:nth-child(3) { display: block; transform: translateY(6px); }
+  }
+
+  /* ---------- sections ---------- */
+  section.block { padding-block: 64px; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h2 {
+    font-size: clamp(24px, 3.4vw, 32px);
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .section-lede {
+    color: var(--text-secondary);
+    font-size: 16px;
+    max-width: 540px;
+    margin: 0 0 36px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+  }
+  .feature-card .icon {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+  .feature-card h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .feature-card p {
+    font-size: 14.5px;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-item { flex: 1 1 200px; }
+  .trust-item .num { font-weight: 800; font-size: 26px; font-variant-numeric: tabular-nums; }
+  .trust-item .num .accent { color: var(--accent); }
+  .trust-item .label { font-size: 13.5px; color: var(--text-secondary); margin-top: 2px; }
+
+  footer.site {
+    border-top: 1px solid var(--border);
+    padding-block: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+  }
+  footer.site a { text-decoration: none; }
+  footer.site a:hover { color: var(--accent); }
+
+  @media (max-width: 560px) {
+    .hero { border-radius: 20px; padding-top: 44px; }
+    section.block { padding-block: 48px; }
+  }
+</style>
+
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="/">
+      <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg"><path d="M19 2 L50 46 H33 L40 76 L52 76 L46 98 L24 76 L36 76 L8 34 H27 Z" fill="var(--accent)"/></svg>
+      <div class="wordmark"><span>Halba</span> <span>Halba</span></div>
+    </a>
+  </header>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="bolt-badge">
+        <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg"><path d="M19 2 L50 46 H33 L40 76 L52 76 L46 98 L24 76 L36 76 L8 34 H27 Z" fill="#34C08A"/></svg>
+      </div>
+      <h1>Löydä <span class="accent">halvin</span> sähkösopimus juuri sinun kulutuksellasi.</h1>
+      <p class="lede">
+        HALBA HALBA vertailee suomalaisten sähköyhtiöiden kiinteät, pörssi- ja kulutusvaikutussopimukset
+        yhdessä paikassa — kokonaishintana, ei pelkkänä senttihintana.
+      </p>
+      <div class="store-row">
+        <span class="store-pill"><b>App Store</b> <span class="soon">Tulossa</span></span>
+        <span class="store-pill"><b>Google Play</b> <span class="soon">Tulossa</span></span>
+      </div>
+    </div>
+    <div class="phone-strip">
+      <img src="screenshots/01-etusivu.png" alt="Etusivu">
+      <img src="screenshots/02-vertailu.png" alt="Vertailu">
+      <img src="screenshots/03-hintakehitys.png" alt="Hintakehitys">
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="block">
+    <p class="eyebrow">Ominaisuudet</p>
+    <h2>Kaikki mitä sähkösopimuksen kilpailuttamiseen tarvitset.</h2>
+    <p class="section-lede">Ei rekisteröitymistä, ei mainoksia. Kerro vain vuosikulutuksesi, niin näet heti kuka on oikeasti halvin.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Kolme sopimustyyppiä</h3>
+        <p>Kiinteä, pörssi ja kulutusvaikutus samassa vertailussa, rinnakkain eri kestoilla 6–24 kk.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📈</div>
+        <h3>Hintahistoria</h3>
+        <p>Näet jokaisen sopimuksen hinnan kehityksen viikoittain ennen kuin sitoudut.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔔</div>
+        <h3>Hälytykset</h3>
+        <p>Aseta omat ehdot ja saat ilmoituksen heti kun sopiva tarjous ilmestyy markkinoille.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📅</div>
+        <h3>Muistutus päättymisestä</h3>
+        <p>Merkitse nykyisen sopimuksesi päättymispäivä, niin muistutamme ajoissa etukäteen.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-row">
+    <div class="trust-item">
+      <div class="num"><span class="accent">2×</span>/pv</div>
+      <div class="label">Hinnat päivittyvät suoraan Energiaviraston rekisteristä</div>
+    </div>
+    <div class="trust-item">
+      <div class="num">0 €</div>
+      <div class="label">Ilmainen käyttää, ei piilokuluja</div>
+    </div>
+    <div class="trust-item">
+      <div class="num">0</div>
+      <div class="label">Ei tiliä eikä kirjautumista tarvita</div>
+    </div>
+  </div>
+
+  <footer class="site">
+    <div>© 2026 HALBA HALBA</div>
+    <div class="footer-links">
+      <a href="/privacy.html">Tietosuoja</a>
+      <span>·</span>
+      <a href="/support.html">Tuki</a>
+    </div>
+  </footer>
+</div>
