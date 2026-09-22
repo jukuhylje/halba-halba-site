@@ -1,0 +1,234 @@
+<title>Tuki</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #F4F6F4;
+    --card: #FFFFFF;
+    --border: #CBD3CA;
+    --accent: #16855C;
+    --on-accent: #FFFFFF;
+    --text: #16211F;
+    --text-secondary: #6E7A77;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0D1413;
+      --card: #161F1E;
+      --border: #37453F;
+      --accent: #34C08A;
+      --on-accent: #0D1413;
+      --text: #E9EFEC;
+      --text-secondary: #93A09C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D1413;
+    --card: #161F1E;
+    --border: #37453F;
+    --accent: #34C08A;
+    --on-accent: #0D1413;
+    --text: #E9EFEC;
+    --text-secondary: #93A09C;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  header.brand svg { width: 22px; height: 37px; flex-shrink: 0; }
+  .wordmark {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+  }
+  .wordmark span:first-child { color: var(--text); }
+  .wordmark span:last-child { color: var(--accent); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  .lede {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin: 0 0 40px;
+    max-width: 52ch;
+  }
+
+  .primary-contact {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .primary-contact h2 {
+    margin: 0 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .primary-contact p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14.5px;
+  }
+  .primary-contact a.btn {
+    color: var(--on-accent);
+    background: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  h2.section-title {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+
+  .faq {
+    border-top: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .faq-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-item h3 {
+    font-size: 15.5px;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .faq-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14.5px;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+  .meta-row dt {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .meta-row dd { margin: 0; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  footer a { color: var(--accent); }
+</style>
+
+<div class="wrap">
+  <header class="brand">
+    <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 2 L50 46 H33 L40 76 L52 76 L46 98 L24 76 L36 76 L8 34 H27 Z" fill="currentColor" style="color: var(--accent)" />
+    </svg>
+    <div class="wordmark"><span>HALBA</span> <span>HALBA</span></div>
+  </header>
+
+  <p class="eyebrow">Tuki</p>
+  <h1>Miten voimme auttaa?</h1>
+  <p class="lede">
+    HALBA HALBA vertailee suomalaisten sähköyhtiöiden sopimuksia. Jos jokin ei toimi tai jäät ihmettelemään
+    jotain, olemme täällä.
+  </p>
+
+  <div class="primary-contact">
+    <div>
+      <h2>Lähetä viesti sähköpostilla</h2>
+      <p>Vastaamme yleensä muutaman arkipäivän kuluessa.</p>
+    </div>
+    <a class="btn" href="mailto:support@halbahalba.com">support@halbahalba.com</a>
+  </div>
+
+  <h2 class="section-title">Usein kysyttyä</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <h3>Voin luoda hälytyksen myös sovelluksen sisältä</h3>
+      <p>
+        Asetukset-välilehdeltä löytyy "Ota yhteyttä" -lomake, joka päätyy samaan paikkaan kuin sähköposti. Voit
+        käyttää kumpaa vain.
+      </p>
+    </div>
+    <div class="faq-item">
+      <h3>Hinta ei täsmää yhtiön omalle sivulle</h3>
+      <p>
+        Päivitämme hintatiedot kahdesti päivässä julkisista lähteistä, joten tieto voi joskus laahata hetken
+        perässä jos yhtiö on juuri muuttanut hintaansa. Kerro meille yhtiön nimi ja tuote, niin tarkistamme.
+      </p>
+    </div>
+    <div class="faq-item">
+      <h3>Haluan tietoni poistetuksi</h3>
+      <p>
+        Kerro meille sähköpostitse laitteesi tunnisteesta tai hälytyksestäsi mahdollisimman tarkasti, niin
+        poistamme tietosi. Katso myös <a href="https://claude.ai/code/artifact/78ecc44e-1c68-497f-a38b-d96b017297d1" style="color: var(--accent)">tietosuojaseloste</a>.
+      </p>
+    </div>
+    <div class="faq-item">
+      <h3>Sovellus kaatuu tai ei avaudu</h3>
+      <p>
+        Kerro laitteesi malli ja käyttöjärjestelmän versio, niin pääsemme jäljille nopeammin.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Tiedot</h2>
+  <dl class="meta-row">
+    <div>
+      <dt>Kieli</dt>
+      <dd>Suomi</dd>
+    </div>
+    <div>
+      <dt>Alue</dt>
+      <dd>Suomi</dd>
+    </div>
+  </dl>
+
+  <footer>
+    HALBA HALBA · halbahalba.com · <a href="https://claude.ai/code/artifact/78ecc44e-1c68-497f-a38b-d96b017297d1">Tietosuojaseloste</a>
+  </footer>
+</div>

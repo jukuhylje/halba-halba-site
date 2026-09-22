@@ -1,0 +1,276 @@
+<title>Tietosuojaseloste</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #F4F6F4;
+    --card: #FFFFFF;
+    --border: #CBD3CA;
+    --accent: #16855C;
+    --on-accent: #FFFFFF;
+    --text: #16211F;
+    --text-secondary: #6E7A77;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0D1413;
+      --card: #161F1E;
+      --border: #37453F;
+      --accent: #34C08A;
+      --on-accent: #0D1413;
+      --text: #E9EFEC;
+      --text-secondary: #93A09C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0D1413;
+    --card: #161F1E;
+    --border: #37453F;
+    --accent: #34C08A;
+    --on-accent: #0D1413;
+    --text: #E9EFEC;
+    --text-secondary: #93A09C;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Archivo', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+  header.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  header.brand svg { width: 22px; height: 37px; flex-shrink: 0; }
+  .wordmark {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+  }
+  .wordmark span:first-child { color: var(--text); }
+  .wordmark span:last-child { color: var(--accent); }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin: 0 0 8px;
+    text-wrap: balance;
+  }
+  .updated {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0 0 40px;
+  }
+
+  .lede {
+    font-size: 17px;
+    color: var(--text);
+    border-left: 3px solid var(--accent);
+    padding-left: 18px;
+    margin: 0 0 48px;
+  }
+
+  section { margin-bottom: 36px; }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    text-wrap: balance;
+  }
+  section h2 .num {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  section p, section li {
+    color: var(--text);
+    font-size: 15.5px;
+  }
+  section p { margin: 0 0 12px; }
+  section ul { margin: 0 0 12px; padding-left: 20px; }
+  section li { margin-bottom: 6px; }
+  section p:last-child, section ul:last-child { margin-bottom: 0; }
+
+  .data-table {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px 0;
+    margin: 16px 0;
+  }
+  .data-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 4px 16px;
+    padding: 12px 18px;
+    border-top: 1px solid var(--border);
+  }
+  .data-row:first-child { border-top: none; }
+  .data-row dt {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .data-row dd {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+  @media (max-width: 520px) {
+    .data-row { grid-template-columns: 1fr; }
+  }
+
+  .contact-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .contact-card a {
+    color: var(--on-accent);
+    background: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .contact-card p { margin: 0; font-size: 14.5px; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+</style>
+
+<div class="wrap">
+  <header class="brand">
+    <svg viewBox="0 0 60 100" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19 2 L50 46 H33 L40 76 L52 76 L46 98 L24 76 L36 76 L8 34 H27 Z" fill="currentColor" style="color: var(--accent)" />
+    </svg>
+    <div class="wordmark"><span>HALBA</span> <span>HALBA</span></div>
+  </header>
+
+  <p class="eyebrow">Tietosuoja</p>
+  <h1>Tietosuojaseloste</h1>
+  <p class="updated">Päivitetty 9.9.2026</p>
+
+  <p class="lede">
+    HALBA HALBA vertailee suomalaisten sähköyhtiöiden sopimuksia. Tämä seloste kertoo selkokielisesti mitä
+    tietoa sovellus kerää, mihin sitä käytetään ja miten voit hallita omia tietojasi.
+  </p>
+
+  <section>
+    <h2><span class="num">1</span> Rekisterinpitäjä</h2>
+    <p>
+      HALBA HALBA. Yhteydenotot: <strong>support@halbahalba.com</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span> Emme käytä tiliä tai nimeä</h2>
+    <p>
+      HALBA HALBA ei vaadi rekisteröitymistä. Sovellus luo asennuksen yhteydessä laitteellesi satunnaisen
+      laitetunnisteen, joka ei sisällä nimeäsi, sähköpostiasi eikä muuta sinua suoraan yksilöivää tietoa. Kaikki
+      alla kuvattu tieto liittyy tähän tunnisteeseen, ei sinuun henkilönä.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span> Mitä tietoa keräämme</h2>
+    <div class="data-table">
+      <dl class="data-row">
+        <dt>Hälytykset</dt>
+        <dd>Vuosikulutuksesi, postinumerosi ja hälytyksen ehdot, jotta voimme tarkistaa osumia myös silloin
+          kun sovellus ei ole auki. Push-ilmoitustunniste ilmoituksen lähettämiseksi.</dd>
+      </dl>
+      <dl class="data-row">
+        <dt>Palaute</dt>
+        <dd>Kirjoittamasi viesti sekä valinnaisesti antamasi sähköpostiosoite, jos haluat vastauksen. Maa ja
+          sovellusversio virheiden jäljittämiseksi.</dd>
+      </dl>
+      <dl class="data-row">
+        <dt>Käyttötilastot</dt>
+        <dd>Mitä sopimuksia vertailussa näytetään ja klikataan, sekä kuinka usein sovellus avataan. Käytämme
+          tätä ymmärtääksemme mitkä tarjoukset kiinnostavat käyttäjiä.</dd>
+      </dl>
+      <dl class="data-row">
+        <dt>Oma sopimus</dt>
+        <dd>Jos tallennat nykyisen sopimuksesi päättymispäivän muistutusta varten, se pysyy vain laitteellasi
+          eikä lähde palvelimelle.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span> Kenelle tieto kulkee</h2>
+    <p>Käytämme kuvattujen tietojen käsittelyyn ulkopuolista tietokantapalvelua sekä push-ilmoitusten
+      teknistä välityspalvelua. Emme myy tietoja emmekä jaa niitä mainostajille tai muille kolmansille
+      osapuolille.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span> Kuinka kauan säilytämme</h2>
+    <p>
+      Tietoa säilytetään niin kauan kuin se on tarpeen kuvattujen käyttötarkoitusten toteuttamiseksi, esimerkiksi
+      niin kauan kuin hälytys on voimassa.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span> Oikeutesi</h2>
+    <p>
+      EU:n yleisen tietosuoja-asetuksen mukaan sinulla on oikeus saada tietosi nähtäväksi, oikaistuksi tai
+      poistetuksi.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span> Muutokset tähän selosteeseen</h2>
+    <p>
+      Jos päivitämme tätä selostetta, päivitämme myös yllä olevan päivämäärän. Merkittävistä muutoksista
+      kerromme tarvittaessa myös sovelluksessa.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span> Yhteystiedot</h2>
+    <div class="contact-card">
+      <p>Kysyttävää tietosuojasta tai omista tiedoistasi?</p>
+      <a href="mailto:support@halbahalba.com">support@halbahalba.com</a>
+    </div>
+  </section>
+
+  <footer>
+    HALBA HALBA · halbahalba.com
+  </footer>
+</div>
