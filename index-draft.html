@@ -330,3 +330,28 @@
     </div>
   </footer>
 </div>
+
+<script>
+(function () {
+  try {
+    var region = null;
+    var loc = (navigator.language || '').split('-');
+    if (loc.length > 1) region = loc[1].toUpperCase();
+    fetch('https://zkfiqksfrvdjbclbhgrq.supabase.co/rest/v1/site_pageviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZmlxa3NmcnZkamJjbGJoZ3JxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2Nzg2NDAsImV4cCI6MjEwMzI1NDY0MH0.6rX_MWPLm2KxYWuvGP0e_sL8coib7bqQRYOrloLcpYo',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InprZmlxa3NmcnZkamJjbGJoZ3JxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2Nzg2NDAsImV4cCI6MjEwMzI1NDY0MH0.6rX_MWPLm2KxYWuvGP0e_sL8coib7bqQRYOrloLcpYo',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        path: location.pathname,
+        country: region,
+        referrer: document.referrer || null
+      }),
+      keepalive: true
+    }).catch(function () {});
+  } catch (e) {}
+})();
+</script>
